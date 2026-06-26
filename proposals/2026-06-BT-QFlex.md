@@ -3,7 +3,8 @@
 **Authors**: Yoon Auh, Nick Bennig, Sotir Triantafillou, Eric Hauk\
 **Status**: Draft\
 **Created**: 2026-06-26\
-**Champions**: IntellectEU, 7Ridge/C7, Texture Capital
+**Champions**: IntellectEU, 7Ridge/C7, Texture Capital  
+**Label**: canton-protocol-multi-synchronizer
 ## **Abstract**
 
 BOLTS Technologies (BOLTS) requests a Development Fund grant to integrate QFlex, a crypto-agile quantum resilient solution, as a long-term, production-grade infrastructure for Canton Network. This project delivers a common good to Canton by providing QFlex as a shared asset of the ecosystem and a core protocol upgrade. The proposed grant is in 4 sections: (i) development/integration, (ii) adoption, (iii) maintenance, and (iv) licensing.
