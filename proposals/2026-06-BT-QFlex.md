@@ -87,23 +87,23 @@ Integrate QFlex into the Canton ecosystem as a production-grade cryptographic ag
 Canton’s current (legacy) cryptographic paths will be untouched and will continue to be operational.
 2. **Algorithm maintenance**
 
-   1. **Algorithm matrix curation and enforcement –**
+   i. **Algorithm matrix curation and enforcement –**
 
    QFlex will present eddsa, ecdsa, dilithium (3 security levels), sphincs+ (12 variants) from an approved open-source library (most likely BouncyCastle). Only this algorithm matrix will be supported in QFlex including an approved list of hybrid algo combinations. All other signature compositions presented for QFlex processing not on the list will result in a validation error.
 
-   1. **Algorithm compatibility testing –**
+   ii. **Algorithm compatibility testing –**
 
    An extensive algorithm compatibility test suite will be run and analyzed upon any changes to Canton legacy signature code, QFlex code and the underlying cryptographic library codebases. The test suite may include cross compatibility testing with other well-known libraries. For any one algorithm variant, the compatibility tests will result in a pass or fail (with failure mode).
 
-   1. **New algorithms –**
+   iii. **New algorithms –**
 
    After thorough testing, a label will be introduced and released into the network for active use. Only this approved label will be recognized by the QFlex API for proper validation on any transaction.
 
-   1. **Same algorithm implementation deltas –**
+   iv. **Same algorithm implementation deltas –**
 
    The different versions of the same library may introduce a delta on the algorithm outputs. These will be labeled and maintained as distinct PQC algorithm variants within QFlex as to maintain backward compatibility with committed transactions.
 
-   1. **Algorithm retirement –**
+   v. **Algorithm retirement –**
 
    Once an algorithm is used in a committed transaction, it cannot be removed; otherwise, backward compatibility may be violated. With community/governance guidance, deprecated algorithms can be prevented within QFlex from being used in new transactions going forward.
 
