@@ -47,19 +47,13 @@ Integrate QFlex into the Canton ecosystem as a production-grade cryptographic ag
    1. **Technical Mechanics**  
    QFlex will be implemented as an additive cryptographic code path alongside Canton’s existing EdDSA/ECDSA workflows.
 
-   The implementation is organized around three core cryptographic functions: QFlex\_generatekeys(), QFlex\_sign(), and QFlex\_verify(). These functions interface with approved open-source cryptographic libraries to perform key generation, transaction signing, and signature verification across supported legacy, post-quantum, and hybrid algorithms.
+      The implementation is organized around three core cryptographic functions: QFlex\_generatekeys(), QFlex\_sign(), and QFlex\_verify(). These functions interface with approved open-source cryptographic libraries to perform key generation, transaction signing, and signature verification across supported legacy, post-quantum, and hybrid algorithms.   
 
+      QFlex integrates into Canton through an API architecture for validator, participant-node, and application signing workflows. During transaction creation, any node can invoke the QFlex signing API to generate a supported signature format. For transaction verification, the transaction metadata identifies the cryptographic scheme used so that receiving nodes can validate the transaction through the corresponding verification pathway: QFlex or legacy. Applications can continue to use their own legacy methods and/or construct messages formatted for QFlex processing on the receiving nodes; QFlex API use will be optional for applications.
+      
+      QFlex will not replace institutional key management infrastructure.  Existing Key Management Systems (KMS), Hardware Security Modules (HSM), custody platforms, and signing systems remain entirely under operator control. QFlex operates strictly as an orchestration layer, invoking approved cryptographic providers and coordinating supported transaction-signing pathways. In the future, QFlex enhancements can enable Canton to work with PQC HSMs/KMS where applicable.   
 
-
-   QFlex integrates into Canton through an API architecture for validator, participant-node, and application signing workflows. During transaction creation, any node can invoke the QFlex signing API to generate a supported signature format. For transaction verification, the transaction metadata identifies the cryptographic scheme used so that receiving nodes can validate the transaction through the corresponding verification pathway: QFlex or legacy. Applications can continue to use their own legacy methods and/or construct messages formatted for QFlex processing on the receiving nodes; QFlex API use will be optional for applications.
-
-
-
-   QFlex will not replace institutional key management infrastructure.  Existing Key Management Systems (KMS), Hardware Security Modules (HSM), custody platforms, and signing systems remain entirely under operator control. QFlex operates strictly as an orchestration layer, invoking approved cryptographic providers and coordinating supported transaction-signing pathways. In the future, QFlex enhancements can enable Canton to work with PQC HSMs/KMS where applicable.
-
-
-
-   Operationally, QFlex is designed to support long-term cryptographic agility without requiring disruptive network-wide upgrades or coordinated cryptographic migrations. As regulatory, jurisdictional, and organizational requirements evolve, QFlex enables participants to adopt and transition cryptographic protections independently while preserving interoperability across the broader network.
+      Operationally, QFlex is designed to support long-term cryptographic agility without requiring disruptive network-wide upgrades or coordinated cryptographic migrations. As regulatory, jurisdictional, and organizational requirements evolve, QFlex enables participants to adopt and transition cryptographic protections independently while preserving interoperability across the broader network.
 
 
 
